@@ -1,0 +1,31 @@
+/** Use this to import additional scss files. you can add as many components as needed.
+* 1. Create the .scss file under the scss directory using the following notation: _[filename].scss eg: _typography.
+* 2. use @import to include it here using the notation as shown: eg: _typography.scss will be imported as "@import 'components/typography'"
+*/
+
+
+// Bootstrap Framework.
+@import '../bootstrap/assets/stylesheets/bootstrap';
+// Base-theme overrides.
+@import 'globals/overrides';
+// Default variables.
+@import 'globals/default-variables';
+@import 'globals/typography';
+
+//Layouts
+@import 'layouts/panels-panes';
+
+//Components-
+@import 'components/buttons';
+@import 'components/carousel';
+@import 'components/footer';
+@import 'components/forms';
+@import 'components/header';
+@import 'components/icons';
+@import 'components/navigation';
+@import 'components/services';
+
+//Pages
+
+//Vendor files
+@import 'vendor/font-awesome/font-awesome';
