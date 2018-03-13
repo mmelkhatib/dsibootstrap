@@ -50,44 +50,44 @@
    return theme_menu_link($vars);
  }
 
- // function ldsbootstrap_breadcrumb($vars) {
- //
- //   $breadcrumb = array_unique($vars['breadcrumb']);
- //
- //   if (count($breadcrumb) == 1) {
- //     array_shift($breadcrumb);
- //   }
- //
- //   // Remove breadcrumbs for reset password and user register pages
- //   if (arg(0) === 'user' && (arg(1) === 'password' || arg(1) === 'register')) {
- //     array_pop($breadcrumb);
- //   }
- //
- //   if (!empty($breadcrumb)) {
- //
- //     $separator = '&raquo;';
- //     $class = 'crumb';
- //     end($breadcrumb);
- //     $last = key($breadcrumb);
- //
- //     $output = '<div id="breadcrumb" class="clearfix"><nav class="breadcrumb-wrapper clearfix" role="navigation">';
- //     $output .= '<h2 class="element-invisible">' . t('You are here') . '</h2>';
- //     $output .= '<ol id="crumbs" class="clearfix">';
- //
- //     foreach ($breadcrumb as $key => $val) {
- //       if ($key == $last && count($breadcrumb) != 1) {
- //         $class = 'crumb crumb-last';
- //       }
- //       if ($key == 0) {
- //         $output .= '<li class="' . $class . ' crumb-first">' . $val . '</li>';
- //       }
- //       else {
- //         $output .= '<li class="' . $class . '"><span class="crumb-separator">' . $separator . '</span>' . $val . '</li>';
- //       }
- //     }
- //
- //     $output .= '</ol></nav></div>';
- //
- //     return $output;
- //   }
- // }
+ function ldsbootstrap_breadcrumb($vars) {
+
+   $breadcrumb = array_unique($vars['breadcrumb']);
+
+   if (count($breadcrumb) == 1) {
+     array_shift($breadcrumb);
+   }
+
+   // Remove breadcrumbs for reset password and user register pages
+   if (arg(0) === 'user' && (arg(1) === 'password' || arg(1) === 'register')) {
+     array_pop($breadcrumb);
+   }
+
+   if (!empty($breadcrumb)) {
+
+     $separator = '&raquo;';
+     $class = 'crumb';
+     end($breadcrumb);
+     $last = key($breadcrumb);
+
+     $output = '<div id="breadcrumb" class="clearfix"><nav class="breadcrumb-wrapper clearfix" role="navigation">';
+     $output .= '<h2 class="element-invisible">' . t('You are here') . '</h2>';
+     $output .= '<ol id="crumbs" class="clearfix">';
+
+     foreach ($breadcrumb as $key => $val) {
+       if ($key == $last && count($breadcrumb) != 1) {
+         $class = 'crumb crumb-last';
+       }
+       if ($key == 0) {
+         $output .= '<li class="' . $class . ' crumb-first">' . $val . '</li>';
+       }
+       else {
+         $output .= '<li class="' . $class . '"><span class="crumb-separator">' . $separator . '</span>' . $val . '</li>';
+       }
+     }
+
+     $output .= '</ol></nav></div>';
+
+     return $output;
+   }
+ }
